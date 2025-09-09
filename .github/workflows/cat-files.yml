@@ -1,0 +1,40 @@
+name: Show Folder Contents
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  show-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Traverse folders and display contents
+        run: |
+          echo "📁 Starting from root..."
+          cd level1
+          echo "📁 Entered level1"
+          cat folder.txt
+          echo ""
+
+          cd level2
+          echo "📁 Entered level2"
+          cat folder.txt
+          echo ""
+
+          cd level3
+          echo "📁 Entered level3"
+          cat folder.txt
+          echo ""
+
+          cd level4
+          echo "📁 Entered level4"
+          cat folder.txt
+          echo ""
+
+          cd level5
+          echo "📁 Entered level5"
+          cat folder.txt
+          echo ""
